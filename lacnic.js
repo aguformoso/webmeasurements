@@ -1,7 +1,7 @@
 (function(f, b) {
     var c = f.createElement(b),
         e = f.getElementsByTagName(b)[0];
-    c.src = "http://requirejs.org/docs/release/2.3.2/minified/require.js";
+    c.src = "https://cdn.dev.lacnic.net/require.js";
     c.type = "text/javascript";
     e.parentNode.insertBefore(c, e);
     c.onload = c.onreadystatechange = function() {
