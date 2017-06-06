@@ -1,6 +1,6 @@
 /*
-
-*/
+ *
+ */
 (function(f, b) {
     var c = f.createElement(b),
         e = f.getElementsByTagName(b)[0];
@@ -18,7 +18,7 @@
             }
         });
 
-        require(["jquery", "monitor"], function($, BOOMR) {
+        require(["jquery", "monitor"], function($, MONITOR) {
             // Configuration loaded now, safe to do other require calls
             // that depend on that config.
 
