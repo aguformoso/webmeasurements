@@ -10,11 +10,12 @@
             "paths": {
                 "jquery": "https://code.jquery.com/jquery-1.11.1.min",
                 "simon": "https://cdn.rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
-                "stun": "https://cdn.rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun"
+                "stun": "https://cdn.rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
+                "monitor": "https://cdn.rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
             }
         });
 
-        require(["jquery"], function($) {
+        require(["jquery", "monitor"], function($) {
             // Configuration loaded now, safe to do other require calls
             // that depend on that config.
 
