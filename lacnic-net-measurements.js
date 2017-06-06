@@ -1,3 +1,6 @@
+/*
+
+*/
 (function(f, b) {
     var c = f.createElement(b),
         e = f.getElementsByTagName(b)[0];
