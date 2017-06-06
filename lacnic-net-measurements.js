@@ -18,7 +18,7 @@
             }
         });
 
-        require(["jquery", "monitor"], function($) {
+        require(["jquery", "monitor"], function($, BOOMR) {
             // Configuration loaded now, safe to do other require calls
             // that depend on that config.
 
