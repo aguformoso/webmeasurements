@@ -11,7 +11,7 @@
       // Require libraries loaded
         requirejs.config({
             "paths": {
-                "jquery": "https://code.jquery.com/jquery-1.11.1.min",
+                "jquery": "https://cdn.dev.lacnic.net/jquery-1.11.1.min",
                 "simon": "https://cdn.rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
                 "stun": "https://cdn.rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
                 "monitor": "https://cdn.rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
