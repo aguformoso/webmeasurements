@@ -20,19 +20,19 @@
             }
         });
 
-        require(["jquery", "monitor"], function($, MONITOR) {
-            // Configuration loaded now, safe to do other require calls
-            // that depend on that config.
-
-            if (Math.random() < 1 / 2) {
-                require(["simon", "jsonp", "date-format"], function (simon, jsonp, dateFormat) {
-                    SIMON.init();
-                });
-            } else {
-                require(["stun"], function() {
-                    STUN.init();
-                });
-            }
-        });
+        // require(["jquery", "monitor"], function($, MONITOR) {
+        //     // Configuration loaded now, safe to do other require calls
+        //     // that depend on that config.
+        //
+        //     if (Math.random() < 1 / 2) {
+        //         require(["simon", "jsonp", "date-format"], function (simon, jsonp, dateFormat) {
+        //             SIMON.init();
+        //         });
+        //     } else {
+        //         require(["stun"], function() {
+        //             STUN.init();
+        //         });
+        //     }
+        // });
     }
 }(document, "script"));
