@@ -14,9 +14,9 @@
                 "jquery": "https://cdn.dev.lacnic.net/jquery-1.11.1.min",
                 "jsonp": "https://cdn.dev.lacnic.net/jsonp",
                 "date-format": "https://cdn.dev.lacnic.net/date.format",
-                "simon": "https://cdn.rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
-                "stun": "https://cdn.rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
-                "monitor": "https://cdn.rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
+                "simon": "https://rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
+                "stun": "https://rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
+                "monitor": "https://rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
             }
         });
 
