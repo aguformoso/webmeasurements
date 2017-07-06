@@ -16,23 +16,25 @@
                 "date-format": "https://cdn.dev.lacnic.net/date.format",
                 "simon": "https://rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
                 "stun": "https://rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
-                "monitor": "https://rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
+                "monitor": "https://rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"  // "http://127.0.0.1:8004/static/app/js/monitor" //
             }
         });
 
-        // require(["jquery", "monitor"], function($, MONITOR) {
-        //     // Configuration loaded now, safe to do other require calls
-        //     // that depend on that config.
-        //
-        //     if (Math.random() < 1 / 2) {
-        //         require(["simon", "jsonp", "date-format"], function (simon, jsonp, dateFormat) {
-        //             SIMON.init();
-        //         });
-        //     } else {
-        //         require(["stun"], function() {
-        //             STUN.init();
-        //         });
-        //     }
-        // });
+        require(["jquery", "monitor"], function($, MONITOR) {
+            // Configuration loaded now, safe to do other require calls
+            // that depend on that config.
+
+            MONITOR.init();
+
+            if (Math.random() < 1 / 2) {
+                require(["simon", "jsonp", "date-format"], function (SIMON, jsonp, dateFormat) {
+                    SIMON.init();
+                });
+            } else {
+                require(["stun"], function() {
+                    STUN.init();
+                });
+            }
+        });
     }
 }(document, "script"));
