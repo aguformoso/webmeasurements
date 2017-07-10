@@ -9,7 +9,15 @@ define(function () {
 
     charts.debug = false;
 
-    charts.endpoint = charts.debug && 'http://127.0.0.1:8001/code/' || 'https://charts.dev.lacnic.net/code/';
+    charts.endpoint = charts.debug && 'http://127.0.0.1:8001' || 'https://charts.dev.lacnic.net';
+
+    charts.progressBars = {};  // charts managed by the CHARTS object
+
+    charts.updateChart = function (divId, value, message) {
+
+        var progress = document.getElementById(divId).getElementsByTagName('progress')[0];
+        progress.value = value;
+    }
 
     charts.draw = async function ({x = [], y = [], ys = [[]], kind = '', divId = '', xType = '', callback = '', labels = [], colors = [], stacked = '', my_options = {}}) {
 
@@ -18,6 +26,9 @@ define(function () {
         var br = document.createElement('br');
         var span = document.createElement('span');
         var div;
+
+
+
         if (document.getElementById(divId) === null) {
             div = document.createElement('div');
             div.id = divId;
@@ -36,10 +47,7 @@ define(function () {
         div.appendChild(span);
 
 
-        // function updateChart(value, message) {
-        //     progress.setAttribute('value', value);
-        //     span.innerHTML = message;
-        // }
+        charts.updateChart(divId, 20);
 
 
         var params = decodeURIComponent($.param({
@@ -56,8 +64,7 @@ define(function () {
             'my_options': JSON.stringify(my_options)
         }));
 
-        // updateChart(30, 'Fetching chart');
-
+        charts.updateChart(divId, 30);
 
         script = document.createElement('script');
         script.type = 'text/javascript';
@@ -66,10 +73,14 @@ define(function () {
             // remote script has loaded
         };
 
-        script.src = charts.endpoint + '?' + params;
-        document.getElementsByTagName('head')[0].appendChild(script);
-        // updateChart(90, 'Fetching chart');
+        var service = '/code';
+        if(kind === 'Histogram')
+            service = '/hist/code';
 
+        script.src = this.endpoint + service + '?' + params;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        charts.updateChart(divId, 75);
     };
 
     return charts;
