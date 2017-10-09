@@ -42,7 +42,7 @@
           SIMON.init();
         });
       } else {
-        require(["stun"], function() {
+        require(['stun'], function(STUN) {
           STUN.init();
         });
       }
