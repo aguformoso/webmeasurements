@@ -1,5 +1,6 @@
 /*
- *
+ * Web Measurements
+ * October 2018
  */
 (function(f, b) {
   var c = f.createElement(b),
@@ -13,9 +14,6 @@
       "paths": {
         "jquery": "https://cdn.dev.lacnic.net/jquery-1.11.1.min",
         "jquery-private": 'https://cdn.dev.lacnic.net/jquery-private',
-        "jsonp": "https://cdn.dev.lacnic.net/jsonp",
-        "date-format": "https://cdn.dev.lacnic.net/date.format",
-        "simon": "https://rawgit.com/LACNIC/simon/master/simon-javascript/simon_probe_plugin",
         "stun": "https://rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
         "monitor": "https://rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
       },
@@ -37,10 +35,8 @@
 
       MONITOR.init();
 
-      if (Math.random() < 1 / 2) {
-        require(["simon", "jsonp", "date-format"], function(SIMON, jsonp, dateFormat) {
-          SIMON.init();
-        });
+      if ( Math.random() > 1.0 ) {
+
       } else {
         require(['stun'], function(STUN) {
           STUN.init();
