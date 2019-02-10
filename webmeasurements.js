@@ -14,7 +14,7 @@
       "paths": {
         "jquery": "https://cdn.dev.lacnic.net/jquery-1.11.1.min",
         "jquery-private": 'https://cdn.dev.lacnic.net/jquery-private',
-        "stun": "https://rawgit.com/LACNIC/natmeter/master/stun/app/static/app/js/stun",
+        "stun": "https://rawgit.com/LACNIC/natmeter/21c980e210926deb1e07afa5a457ea4f4088ee64/stun/app/static/app/js/stun",
         "monitor": "https://rawgit.com/LACNIC/monitor/master/monitor/app/static/app/js/monitor"
       },
 
