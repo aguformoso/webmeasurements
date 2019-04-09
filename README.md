@@ -18,7 +18,7 @@ Also: seeing the internet through browser-based measurements
 All it takes is placing the following script on your site. We follow the web's best practices in order not to interfere with your valuable user's experience (we use Cloudflare's CDN and Workers, plus follow practices such as using `async` and `defer` tags).
 
 ```html
-<script src=“https://webmeasurements.net/webmeasurements.js”></script>
+<script src="https://webmeasurements.net/webmeasurements.js"></script>
 ```
 
 ## Data Collection
