@@ -33,7 +33,6 @@
       // Configuration loaded now, safe to do other require calls
       // that depend on that config.
 
-      MONITOR.init();
       const ripestat = "https://stat.ripe.net";
       const browser = {}; // object to store our information into
 
