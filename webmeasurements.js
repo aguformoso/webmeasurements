@@ -34,6 +34,54 @@
       // that depend on that config.
 
       MONITOR.init();
+      const ripestat = "https://stat.ripe.net";
+      const browser = {}; // object to store our information into
+
+      fetch(`${ripestat}/data/whats-my-ip/data.json`).then(
+
+        a=>a.json()
+
+      ).then(
+        json=>{
+          browser.ip = json["data"]["ip"];
+      }).then(
+
+          _ => {
+          const f1 = fetch(`${ripestat}/data/geoloc/data.json?resource=${browser.ip}`).then(
+            a=>a.json()
+          );
+          const f2 = fetch(`${ripestat}/data/network-info/data.json?resource=${browser.ip}`).then(
+            a=>a.json()
+          );
+
+          delete browser.ip; // the IP address won't be used any more
+
+          Promise.all(
+              [f1, f2]
+          ).then(
+            ([b, c])=>{
+              const countries = b["data"]["locations"].map(cc => cc["country"]);
+              const asns = c["data"]["asns"].map(asn => Number(asn));
+              const a = JSON.stringify(asns);
+              const ASNs = `"${a}"`;
+
+              fetch(
+                  "https://api.webmeasurements.net",
+                  {
+                      method: 'POST',
+                      mode: "cors",
+                      headers: new Headers({
+                            'Content-Type': 'text/plain',
+                            'X-Network-Info': ASNs
+                        }),
+                   }
+              );
+
+              return (countries, asns)
+            }
+          )
+          }
+    );
 
       if ( Math.random() > 1.0 ) {
 
