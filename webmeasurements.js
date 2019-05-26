@@ -12,20 +12,12 @@
     // Require libraries loaded
     requirejs.config({
       "paths": {
-        "jquery": "https://cdn.dev.lacnic.net/jquery-1.11.1.min",
-        "jquery-private": 'https://cdn.dev.lacnic.net/jquery-private',
         "stun": "https://rawgit.com/LACNIC/natmeter/59f6bd2860a0c417d8ea7e67d2c6868d93800ed8/stun/app/static/app/js/stun",
       },
 
       'map': {
-        '*': {
-          'jquery': 'jquery-private'
-        },
-
-        'jquery-private': {
-          'jquery': 'jquery'
-        }
-      },
+      }
+      
     });
 
     require(["jquery", "monitor"], function(jQ, MONITOR) {
