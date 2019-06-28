@@ -14,9 +14,6 @@
             "paths": {
                 "stun": "https://rawgit.com/LACNIC/natmeter/59f6bd2860a0c417d8ea7e67d2c6868d93800ed8/stun/app/static/app/js/stun",
             },
-
-            'map': {}
-
         });
 
         require([], function () {
@@ -40,16 +37,25 @@
                         a => a.json()
                     );
 
+                    const f3 = fetch(`${ripestat}/data/rir/data.json?resource=${browser.ip}`).then(
+                        a => a.json()
+                    );
+
+
                     delete browser.ip; // the IP address won't be used any more
 
                     Promise.all(
-                        [f1, f2]
+                        [f1, f2, f3]
                     ).then(
-                        ([b, c]) => {
-                            const countries = b["data"]["locations"].map(cc => cc["country"]);
-                            const asns = c["data"]["asns"].map(asn => Number(asn));
+                        ([r1, r2, r3]) => {
+                            const countries = r1["data"]["locations"].map(cc => cc["country"]);
+                            const asns = r2["data"]["asns"].map(asn => Number(asn));
+                            const rirs = r3["data"]["rirs"].map(rir => rir["rir"]);
+
                             const a = JSON.stringify(asns);
                             const ASNs = `"${a}"`;
+
+                            const RIRs = rirs.join(",");
 
                             fetch(
                                 "https://api.webmeasurements.net",
@@ -58,12 +64,13 @@
                                     mode: "cors",
                                     headers: new Headers({
                                         'Content-Type': 'text/plain',
-                                        'X-Network-Info': ASNs
-                                    }),
+                                        'X-Network-Info': ASNs,
+                                        'X-Rir-Info': RIRs
+                                    })
                                 }
                             );
 
-                            return (countries, asns)
+                            return (countries, asns, rirs)
                         }
                     )
                 }
