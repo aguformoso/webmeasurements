@@ -14,9 +14,6 @@
             "paths": {
                 "stun": "https://rawgit.com/LACNIC/natmeter/59f6bd2860a0c417d8ea7e67d2c6868d93800ed8/stun/app/static/app/js/stun",
             },
-
-            'map': {}
-
         });
 
         require([], function () {
