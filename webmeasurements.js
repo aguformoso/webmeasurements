@@ -20,6 +20,30 @@
             // Configuration loaded now, safe to do other require calls
             // that depend on that config.
 
+            const runAutomatically = {
+
+                'default-optin': 'false', // optin=false, in case the *site* hasn't specified anything yet
+
+                'optin=true' : {
+                    'default': 'false', // in case the *user* hasn't specified anything yet
+                    'userchoice=true' : 'true',
+                    'userchoice=false' : 'false'
+                },
+                'optin=false' : {
+                    'default': 'false', // in case the *user* hasn't specified anything yet
+                    'userchoice=true' : 'false',
+                    'userchoice=false' : 'true'
+                },
+
+            };
+
+            const optin = window.localStorage.getItem('webmeasurements.optin') || runAutomatically['default-optin'];
+            const userchoice = window.localStorage.getItem('webmeasurements.userchoice') || runAutomatically[`optin=${optin}`]['default'];
+
+            const runExperiment = runAutomatically[`optin=${optin}`][`userchoice=${userchoice}`] === 'true';
+            if(!runExperiment)
+                return;
+
             const ripestat = "https://stat.ripe.net";
             const browser = {}; // object to store our information into
 
