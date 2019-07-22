@@ -15,6 +15,3 @@ before_script:
 
 script:
   - karma start karma.conf.js --single-run
-
-notifications:
-  slack: lacnic-eng:jSDKPP0pyOgA5JV4lsQTGtuP
