@@ -31,6 +31,7 @@ We collect technical information related with
 We *do not* collect
  - your browsing activity, including which pages you've been visiting
  - personal related information
+ - We honour [Do Not Track header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DNT). If present, then we'll run no tests at all.
  
 Also, we make use of cookies 🍪, for you not to run the same experiment repeatedly over time, only when needed.
 
@@ -40,3 +41,5 @@ The usage of cookies requires your site to explicitly notify users about it. You
 
 ## Contact
 agustin@webmeasurements.net
+
+![Build status](https://travis-ci.org/aguformoso/webmeasurements.svg?branch=master)
