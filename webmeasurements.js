@@ -37,11 +37,19 @@
 
             };
 
+            // DNT
+            let dnt = false;
+            if (
+                (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) && // dnt available
+                (window.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.doNotTrack === "1" || navigator.msDoNotTrack === "1" || window.external.msTrackingProtectionEnabled())
+            ) // dnt set by user
+                dnt = true;
+
             const optin = window.localStorage.getItem('webmeasurements.optin') || runAutomatically['default-optin'];
             const userchoice = window.localStorage.getItem('webmeasurements.userchoice') || runAutomatically[`optin=${optin}`]['default'];
 
             const runExperiment = runAutomatically[`optin=${optin}`][`userchoice=${userchoice}`] === 'true';
-            if(!runExperiment)
+            if(dnt || !runExperiment)
                 return;
 
             const ripestat = "https://stat.ripe.net";
