@@ -43,4 +43,5 @@ The usage of cookies requires your site to explicitly notify users about it. You
 agustin@webmeasurements.net
 
 ![Build status](https://travis-ci.org/aguformoso/webmeasurements.svg?branch=master)
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/S2VYNXp4QzlOdjJPdm8yLzhnaUhCQT09LS1zanNnSHR6c3JRYkRhYUVDYUNoeSt3PT0=--5c10619dec1d8fc64723dc4cb007c48c63ac0ba5)
+
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=S2VYNXp4QzlOdjJPdm8yLzhnaUhCQT09LS1zanNnSHR6c3JRYkRhYUVDYUNoeSt3PT0=--5c10619dec1d8fc64723dc4cb007c48c63ac0ba5)](https://www.browserstack.com/automate/public-build/S2VYNXp4QzlOdjJPdm8yLzhnaUhCQT09LS1zanNnSHR6c3JRYkRhYUVDYUNoeSt3PT0=--5c10619dec1d8fc64723dc4cb007c48c63ac0ba5)
