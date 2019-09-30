@@ -99,7 +99,7 @@
                                         'Content-Type': 'text/plain',
                                         'X-Network-Info': ASNs,
                                         'X-Rir-Info': RIRs,
-                                        'X-Browser-Info': browser,
+                                        'X-Browser-Info': JSON.stringify(browser),
                                     })
                                 }
                             );
