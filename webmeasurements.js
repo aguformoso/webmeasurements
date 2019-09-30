@@ -12,13 +12,12 @@
         // Require libraries loaded
         requirejs.config({
             "paths": {
+                "ua-parser-js": "https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min",
                 "stun": "https://rawgit.com/LACNIC/natmeter/59f6bd2860a0c417d8ea7e67d2c6868d93800ed8/stun/app/static/app/js/stun",
             },
         });
 
-        require([], function () {
-            // Configuration loaded now, safe to do other require calls
-            // that depend on that config.
+        require(["ua-parser-js"], function (UAParser) {
 
             const runAutomatically = {
 
@@ -52,8 +51,10 @@
             if(dnt || !runExperiment)
                 return;
 
+            let browser = new UAParser().getResult();  // object to store our information into
+
             const ripestat = "https://stat.ripe.net";
-            const browser = {}; // object to store our information into
+
 
             fetch(`${ripestat}/data/whats-my-ip/data.json`).then(
                 a => a.json()
@@ -97,7 +98,8 @@
                                     headers: new Headers({
                                         'Content-Type': 'text/plain',
                                         'X-Network-Info': ASNs,
-                                        'X-Rir-Info': RIRs
+                                        'X-Rir-Info': RIRs,
+                                        'X-Browser-Info': browser,
                                     })
                                 }
                             );
