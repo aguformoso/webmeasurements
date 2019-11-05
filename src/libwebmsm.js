@@ -28,8 +28,8 @@ export const measurementsDecider = () => {
    *
    * Do *NOT* run if any of the following apply:
    * - The user has DoNotTrack (DNT) enabled in browser settings
-   * - An opt in UI was shown and the interaction with the user is negative
-   * - An opt out UI was shown and the interaction with the user was negative
+   * - An opt in UI was shown and the outcome is negative
+   * - An opt out UI was shown and the outcome is negative
    */
   const DNTSetByUser =
     (window.doNotTrack ||
@@ -52,12 +52,12 @@ export const measurementsDecider = () => {
   let run = null;
 
   switch (String(optIn, userChoice)) {
-    // Opt IN UI was shown, user said Yes
+    // Opt IN UI was shown, user confirmed "I want in"
     case "true,true":
       run = true;
       break;
 
-    // Opt IN UI was shown, said "I want out"
+    // Opt IN UI was shown, user denied and said "I want out"
     case "true,false":
       run = false;
       break;
