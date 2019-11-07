@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/density215/webmeasurements.git"
+    "url": "git+https://github.com/aguformoso/webmeasurements.git"
   },
   "author": "Agustin Formoso",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/density215/webmeasurements/issues"
+    "url": "https://github.com/aguformoso/webmeasurements/issues"
   },
-  "homepage": "https://github.com/density215/webmeasurements#readme",
+  "homepage": "https://github.com/aguformoso/webmeasurements#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
