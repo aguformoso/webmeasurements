@@ -2,9 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-var dir_app = path.resolve(__dirname, "src");
-var dir_build = path.resolve(__dirname, "build");
-var dir_html = path.resolve(__dirname, "html");
+let dir_app = path.resolve(__dirname, "src");
+let dir_build = path.resolve(__dirname, "build");
+let dir_html = path.resolve(__dirname, "html");
 
 /*
  * These are the environment variables that can
@@ -14,19 +14,19 @@ var dir_html = path.resolve(__dirname, "html");
 // API_SERVER
 // the api server that is used to make all API calls to
 // this var will be fed to the top react component.
-var apiServer = process.env.API_SERVER || "atlas.ripe.net";
+let apiServer = process.env.API_SERVER || "atlas.ripe.net";
 
 // PUBLIC_PATH
 // this path should conform to the STATIC_BUILD_URL config setting
 // in the atlas-ui django app.
 // Also important for code splitting:
 // all split files ('0.bundle.js') will be hosted prefixed with this
-var publicPath = process.env.PUBLIC_PATH || "https://8080.ripe.net/";
+let publicPath = process.env.PUBLIC_PATH || "https://8080.ripe.net/";
 
-var entryDomElement = "#rpki";
+let entryDomElement = "#rpki";
 
 // APP_NAME
-var appName = process.env.APP_NAME || "RpkiWebTest";
+let appName = process.env.APP_NAME || "RpkiWebTest";
 
 // end environment variables
 module.exports = {
