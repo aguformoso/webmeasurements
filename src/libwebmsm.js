@@ -12,7 +12,11 @@ import { testRpkiInvalids } from "rpki-web-test";
  * }
  */
 const TESTS = [
-  { name: "stun", fn: stun().init, args: null },
+  {
+    name: "stun",
+    fn: stun().init,
+    args: []
+  },
   {
     name: "rpki-web-test",
     fn: testRpkiInvalids,

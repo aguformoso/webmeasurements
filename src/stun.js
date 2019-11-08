@@ -1,10 +1,6 @@
-/**
- * Created by agustin on 5/31/16.
- */
-
-export default (debug = true) => {
+export default (debug = false) => {
   let stun = {};
-  stun.debug = debug ? true : false;
+  stun.debug = debug;
   stun.version = 1;
 
   stun.urls = {
@@ -57,8 +53,8 @@ export default (debug = true) => {
       let ca = document.cookie.split(";");
       for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) == " ") c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        while (c.charAt(0) === " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
       }
       return null;
     },
@@ -76,11 +72,11 @@ export default (debug = true) => {
     },
 
     readSTUNCookie: function() {
-      return this.readCookie(stun.cookieName);
+      return this.readCookie(stun.COOKIES.cookieName);
     },
 
     eraseSTUNCookie: function() {
-      return this.eraseCookie(stun.cookieName);
+      return this.eraseCookie(stun.COOKIES.cookieName);
     }
   };
 
@@ -172,14 +168,17 @@ export default (debug = true) => {
     const experimentId = stun.getExperimentId();
     stun.experimentId = experimentId;
     stun.callbacks.before_cookie();
-    if (
-      stun.COOKIES.readSTUNCookie() != null &&
-      !stun.debug &&
-      stun.iceServers.length == 0
-    ) {
-      stun.callbacks.on_cookie_hit();
-      return;
-    }
+    // if (
+    //   stun.COOKIES.readSTUNCookie() != null &&
+    //   !stun.debug &&
+    //   stun.iceServers.length === 0
+    // ) {
+    //   stun.callbacks.on_cookie_hit();
+    //   return {
+    //     cookie: stun.COOKIES.cookieName,
+    //     msg: "Cookie found, this experiment has already been run. Returning..."
+    //   };
+    // }
 
     stun.COOKIES.createSTUNCookie(experimentId);
 
@@ -284,7 +283,7 @@ export default (debug = true) => {
         stun.callbacks.after_experiment = function() {
           stun.TIMERS["after_experiment"] = new Date().toISOString();
 
-          stun.postResults();
+          return stun.postResults();
         };
 
         stun.callbacks.before_public_request();
