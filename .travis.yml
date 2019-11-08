@@ -15,3 +15,10 @@ before_script:
 
 script:
   - karma start karma.conf.js --single-run
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: "build/webmeasurements.js"
+  on:
+    branch: release
