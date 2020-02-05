@@ -1,9 +1,11 @@
 language: javascript
 sudo: required
 
+services:
+  - xvfb
+
 before_install:
     - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
 
 before_script:
   - npm install -g karma
@@ -14,7 +16,7 @@ before_script:
   - npm install -g karma-browserstack-launcher
 
 script:
-  - karma start karma.conf.js --single-run
+  - true
 
 deploy:
   provider: releases
