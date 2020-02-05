@@ -63,7 +63,7 @@
                     browser.ip = json["data"]["ip"];
                 }).then(
                 _ => {
-                    const f1 = fetch(`${ripestat}/data/geoloc/data.json?resource=${browser.ip}`).then(
+                    const f1 = fetch(`${ripestat}/data/rir-geo/data.json?resource=${browser.ip}`).then(
                         a => a.json()
                     );
                     const f2 = fetch(`${ripestat}/data/network-info/data.json?resource=${browser.ip}`).then(
@@ -81,7 +81,7 @@
                         [f1, f2, f3]
                     ).then(
                         ([r1, r2, r3]) => {
-                            const countries = r1["data"]["locations"].map(cc => cc["country"]);
+                            const countries = r1["data"]["located_resources"].map(cc => cc["location"]);
                             const asns = r2["data"]["asns"].map(asn => Number(asn));
                             const rirs = r3["data"]["rirs"].map(rir => rir["rir"]);
 
