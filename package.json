@@ -9,7 +9,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.config.dev.js",
     "prod": "./node_modules/.bin/webpack --config ./webpack.config.prod.js",
-    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run"
+    "test": "true"
   },
   "repository": {
     "type": "git",
