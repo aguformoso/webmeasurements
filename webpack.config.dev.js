@@ -86,7 +86,7 @@ module.exports = {
         contentBase: dir_build
     },
     plugins: [
-        new CopyWebpackPlugin([{ from: dir_html }]),
+        new CopyWebpackPlugin({patterns:[{from: dir_html}]}),
         new webpack.DefinePlugin({
             __DOM_ENTRY_ELEMENT__: JSON.stringify(entryDomElement),
             __API_SERVER__: JSON.stringify(apiServer),
@@ -94,7 +94,9 @@ module.exports = {
         }),
         // enable HMR globally
         new webpack.HotModuleReplacementPlugin(),
+    ],
+    optimization: {
         // prints more readable module names in the browser console on HMR updates
-        new webpack.NamedModulesPlugin()
-    ]
+        moduleIds: 'named'
+    }
 };
