@@ -9,41 +9,48 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.config.dev.js",
     "prod": "./node_modules/.bin/webpack --config ./webpack.config.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "true"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/density215/webmeasurements.git"
+    "url": "git+https://github.com/aguformoso/webmeasurements.git"
   },
   "author": "Agustin Formoso",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/density215/webmeasurements/issues"
+    "url": "https://github.com/aguformoso/webmeasurements/issues"
   },
-  "homepage": "https://github.com/density215/webmeasurements#readme",
+  "homepage": "https://github.com/aguformoso/webmeasurements#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
-    "@babel/plugin-proposal-function-sent": "^7.2.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "@babel/plugin-transform-async-to-generator": "^7.4.4",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/runtime": "^7.6.3",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.0.3",
-    "core-js": "^3.1.4",
-    "promise.allsettled": "^1.0.1",
-    "regenerator-runtime": "^0.13.2",
-    "uuid": "^3.3.2",
-    "webpack": "^4.32.1",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "@babel/core": "~7.x",
+    "@babel/plugin-proposal-class-properties": "~7.x",
+    "@babel/plugin-proposal-decorators": "~7.x",
+    "@babel/plugin-proposal-export-namespace-from": "~7.x",
+    "@babel/plugin-proposal-function-sent": "~7.x",
+    "@babel/plugin-proposal-object-rest-spread": "~7.x",
+    "@babel/plugin-transform-async-to-generator": "~7.x",
+    "@babel/plugin-transform-runtime": "~7.x",
+    "@babel/preset-env": "~7.x",
+    "@babel/runtime": "~7.x",
+    "babel-loader": "~8.x",
+    "copy-webpack-plugin": "~9.x",
+    "core-js": "~3.x",
+    "jasmine-core": "~3.x",
+    "karma": "~6.x",
+    "karma-browserstack-launcher": "~1.x",
+    "karma-chrome-launcher": "~3.x",
+    "karma-jasmine": "~2.x",
+    "karma-requirejs": "^1.1.0",
+    "promise.allsettled": "~1.x",
+    "regenerator-runtime": "~0.x",
+    "requirejs": "~2.x",
+    "uuid": "~3.x",
+    "webpack": "~5.x",
+    "webpack-cli": "~3.x",
+    "webpack-dev-server": "~3.x"
   },
   "dependencies": {
-    "rpki-web-test": "^0.6.2",
-    "ua-parser-js": "^0.7.20"
+    "rpki-web-test": "~0.x",
+    "ua-parser-js": "~0.x"
   }
 }
