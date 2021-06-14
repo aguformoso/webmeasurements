@@ -24,7 +24,7 @@ All it takes is placing the following script on your site. We follow the web's b
 ## Data Collection
 
 We collect technical information related with
- - your IP address, we anonimize at a /24 for IPv4 and /48 for IPv6 before publishing. We currently store the full address in DB, but will stop doing that in the near future.
+ - your IP address, we anonimize at a /24 for IPv4 and /48 for IPv6 before publishing
  - the ISP you're connected to
  - the browser you're using
 
