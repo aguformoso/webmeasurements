@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - "12.20.1"
 os: linux
 dist: xenial
 
@@ -7,17 +9,6 @@ services:
 
 before_install:
     - export DISPLAY=:99.0
-
-before_script:
-  - npm install -g karma
-  - npm install -g requirejs
-  - npm install -g jasmine-core karma-jasmine
-  - npm install -g karma-requirejs
-  - npm install -g karma-chrome-launcher
-  - npm install -g karma-browserstack-launcher
-
-script:
-  - true
 
 deploy:
   provider: releases
