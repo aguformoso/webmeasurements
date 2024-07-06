@@ -3,19 +3,7 @@ Also: seeing the internet through browser-based measurements
 
 <script src="/webmeasurements.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128157472-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128157472-1');
-</script>-->
-
 ## Collaborate
-
-All it takes is placing the following script on your site. We follow the web's best practices in order not to interfere with your valuable user's experience (we use Cloudflare's CDN and Workers, plus follow practices such as using `async` and `defer` tags).
 
 ```html
 <script src="https://webmeasurements.net/webmeasurements.js"></script>
@@ -41,7 +29,3 @@ The usage of cookies requires your site to explicitly notify users about it. You
 
 ## Contact
 agustin@webmeasurements.net
-
-![Build status](https://travis-ci.org/aguformoso/webmeasurements.svg?branch=master)
-
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=S2VYNXp4QzlOdjJPdm8yLzhnaUhCQT09LS1zanNnSHR6c3JRYkRhYUVDYUNoeSt3PT0=--5c10619dec1d8fc64723dc4cb007c48c63ac0ba5)](https://www.browserstack.com/automate/public-build/S2VYNXp4QzlOdjJPdm8yLzhnaUhCQT09LS1zanNnSHR6c3JRYkRhYUVDYUNoeSt3PT0=--5c10619dec1d8fc64723dc4cb007c48c63ac0ba5)
